@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1556920161 source:c:\users\windino\documents\c++\basico_1_nivel_2\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<clocale>
+
