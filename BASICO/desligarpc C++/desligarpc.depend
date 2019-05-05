@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1523758251 source:c:\users\win7\documents\desligarpc\main.cpp
+	"libtest.h"
+
+1523759204 c:\users\win7\documents\desligarpc\libtest.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<string>
+	<clocale>
+	<clocale>
+	<ctime>
+
+1523758186 source:c:\users\win7\documents\desligarpc\resource.rc
+
+1524749975 source:e:\codino\dados dino\datadinux\projetos\projetosbetas\desligarpc c++\main.cpp
+	"menu.hpp"
+
+1524604373 e:\codino\dados dino\datadinux\projetos\projetosbetas\desligarpc c++\libtest.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<string>
+	<clocale>
+	<ctime>
+	<fstream>
+
+1523760017 source:e:\codino\dados dino\datadinux\projetos\projetosbetas\desligarpc c++\resource.rc
+
+1524240109 e:\codino\dados dino\datadinux\projetos\projetosbetas\desligarpc c++\menu.hpp
+	"libtest.h"
+
+1556389248 source:e:\codino\dados dino\projetos\projetosbetas\desligarpc c++\main.cpp
+	"menu.hpp"
+
+1556389248 e:\codino\dados dino\projetos\projetosbetas\desligarpc c++\menu.hpp
+	"libtest.h"
+
+1556228882 e:\codino\dados dino\projetos\projetosbetas\desligarpc c++\libtest.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<string>
+	<clocale>
+	<ctime>
+	<fstream>
+
+1523760017 source:e:\codino\dados dino\projetos\projetosbetas\desligarpc c++\resource.rc
+
+1525447526 e:\codino\dados dino\projetos\projetosbetas\desligarpc c++\test.cpp
+
