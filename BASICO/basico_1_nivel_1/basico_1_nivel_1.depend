@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1557082689 source:c:\users\windino\documents\github\c-java-coderoot\basico\basico_1_nivel_1\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<clocale>
+
