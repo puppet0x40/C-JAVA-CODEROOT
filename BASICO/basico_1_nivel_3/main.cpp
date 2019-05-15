@@ -15,9 +15,13 @@ void JoQuemPo(const char* title, const char* text1, const char* text2);
 void gameJoQuemPo();
 void about(const char* creator,const char* version,const char* date);
 
+
+void Menu(string text[],int opcao_size);
+
 /*************************** main *************************************/
 int main()
 {
+    string listText[] = {"test","test1","test2","test3"};
     setlocale(LC_ALL,"portuguese");
     system("color 4");
     system("mode con:cols=41 lines=15");
@@ -34,7 +38,7 @@ int main()
         if (opcao == 0)
             exit(1);
 
-        if(opcao < 0 || opcao > 3){
+        if(opcao < 0 || opcao > 4){
             cout << "\t\t\t\tComando Inválidos" ;
             pausa;
         }
@@ -50,6 +54,10 @@ int main()
             break;
         case 3:
             Rpgtext("RPGTEXT","NEW GAME","ABOUT");
+            pausa;
+            break;
+        case 4:
+            Menu(listText,4);
             pausa;
             break;
         }
@@ -112,21 +120,6 @@ void Rpgtext(const char* title, const char* text1, const char* text2){          
     }
 }
 
-void about(const char* creator,const char* version,const char* date){
-    cls;
-    cout << "\n\t\tABOUT\n\n"  << endl;
-    cout << "\tCreator:......"<<creator<< endl;
-    cout << "\tVersion:......"<<version<< endl;
-    cout << "\tDate:........."<<date<< endl;
-}
-
-
-void gameRpgText(){
-
-}
-
-
-
 
 void JoQuemPo(const char* title, const char* text1, const char* text2){             //ok
     while(true){
@@ -160,7 +153,54 @@ void JoQuemPo(const char* title, const char* text1, const char* text2){         
 
 
 
+void Menu(string text[],int opcao_size){             //ok
+    int opcao = 0;
+    do{
+        cls;
+        system("color 2");
+        cout << "\n\t" << text[0] <<"\t\tn0body\n\n";
+        for(int i = 1 ; i < opcao_size; i++){
+            cout << "\t" << i << "." << text[i] << endl;
+        }
+        cout << "\t0.EXIT\n\n "<< //
+                "\tOPÇÃO: ";
+        cin >> opcao;
+        if (opcao == 0)
+        return;
+
+        if(opcao < 0 || opcao > opcao_size)
+        cout << "\tComando Inválidos" ;
+
+    }while(opcao < -0 && opcao > opcao_size);
+    switch(opcao){ //opcao mainMain
+    case 1:
+        gameRpgText();
+        break;
+    case 2:
+        about("n0dody","0.01","15/05/2019");
+        break;
+    }
+        pausa;
+}
+
+
+
+void about(const char* creator,const char* version,const char* date){
+    cls;
+    cout << "\n\t\tABOUT\n\n"  << endl;
+    cout << "\tCreator:......"<<creator<< endl;
+    cout << "\tVersion:......"<<version<< endl;
+    cout << "\tDate:........."<<date<< endl;
+}
+
+
+
 void gameJoQuemPo(){
+
+}
+
+
+void gameRpgText(){
 
 }
 
