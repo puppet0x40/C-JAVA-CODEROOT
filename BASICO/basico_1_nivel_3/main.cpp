@@ -9,10 +9,11 @@ using namespace std;
 
 /*********************** Protótipos das funções************************/
 void fibonacci();
-void rpgText();
-void menuRpgtext();
-void aboutRpgText();
+void Rpgtext(const char* title, const char* text1, const char* text2);
 void gameRpgText();
+void JoQuemPo(const char* title, const char* text1, const char* text2);
+void gameJoQuemPo();
+void about(const char* creator,const char* version,const char* date);
 
 /*************************** main *************************************/
 int main()
@@ -24,41 +25,31 @@ int main()
     do{
         cls;
         cout << "\n\tMenu de jogo e desafio\n" <<
-                "\t1. \n" <<
-                "\t2.Fibonacci\n" <<
-                "\t3. \n" <<
-                "\t4. \n" <<
-                "\t5. \n" <<
-                "\t0. \n\n "<<
+                "\t1.FIBONACCI\n" <<
+                "\t2.JO-QUEM-PO\n" <<
+                "\t3.RPGTEXT\n" <<
+                "\t0.SAIR \n\n "<<
                 "\topção: "; cin >> opcao;
 
         if (opcao == 0)
             exit(1);
 
-        if(opcao < 0 || opcao > 5){
+        if(opcao < 0 || opcao > 3){
             cout << "\t\t\t\tComando Inválidos" ;
             pausa;
         }
         cls;
         switch(opcao){
         case 1:
-
-            pausa;
-            break;
-        case 2:
             fibonacci();
             pausa;
             break;
+        case 2:
+            JoQuemPo("Jo-Quem-Po","JOGAR","SOBRE");
+            pausa;
+            break;
         case 3:
-
-            pausa;
-            break;
-        case 4:
-
-            pausa;
-            break;
-        case 5:
-
+            Rpgtext("RPGTEXT","NEW GAME","ABOUT");
             pausa;
             break;
         }
@@ -77,7 +68,6 @@ void fibonacci(){               //ok
     cout << "\n\tFibonacci\n";
     cout << "\tValor do 1º: "; cin >> a;
     cout << "\tValor do 2º: "; cin >> b;
-    //cout << "\tTamanho da sequência: "; cin>>sequencia;
 
     cout <<"\n<inicio>\n"<< a <<" " << b << " ";
     for(int contador = 0; contador<sequencia; contador++){
@@ -90,56 +80,92 @@ void fibonacci(){               //ok
 }
 
 
-void rpgText(){                 //ok
-    menuRpgtext();
-    cout << "\n\n\n\n\n\t\t\t\tobrigado !";
+
+
+void Rpgtext(const char* title, const char* text1, const char* text2){             //ok
+    while(true){
+        int opcao = 0;
+        do{
+            cls;
+            system("color 2");
+            cout << "\n\t"<<title<<"\t\tn0body\n\n" <<
+                    "\t1." << text1 <<  endl << // ok
+                    "\t2." << text2 << endl << // ok
+                    "\t0.EXIT\n\n "<< //
+                    "\tOPÇÃO: "; cin >> opcao;
+            if (opcao == 0)
+            return;
+
+            if(opcao < 0 || opcao > 2)
+            cout << "\tComando Inválidos" ;
+
+        }while(opcao < -0 && opcao > 3);
+        switch(opcao){ //opcao mainMain
+        case 1:
+            gameRpgText();
+            break;
+        case 2:
+            about("n0body","0.01","18/12/2018");
+            break;
+        }
+        pausa;
+    }
 }
 
-void menuRpgtext(){             //ok
-    int opcao = 0;
-    do{
-        cls;
-        system("color 2");
-        cout << "\n\n\n\n\n\n\t\t\t\tRPG TEXT   \tn0body\n\n" <<
-                "\t\t\t1. NEW GAME       " << endl << // ok
-                "\t\t\t2. ABOUT          " << endl << // ok
-                "\t\t\t0. EXIT            \n\n "<< //
-                "\t\t\tOPÇÃO: "; cin >> opcao;
-        if (opcao == 0)
-        exit(0);
-
-        if(opcao < 0 || opcao > 2)
-        cout << "\t\t\t\tComando Inválidos" ;
-
-    }while(opcao < -0 && opcao > 3);
-    switch(opcao){ //opcao mainMain
-    case 1:
-        gameRpgText();
-        break;
-    case 2:
-        aboutRpgText();
-        break;
-}
-    //system("pause");
-    getchar();
-    getchar();
-    menuRpgtext();
-}
-
-
-
-
-void aboutRpgText(){
+void about(const char* creator,const char* version,const char* date){
     cls;
-    cout << "\n\n\n\n\n\n\t\t\t\t ABOUT\n\n"  << endl;
-    cout << "\t\t\tCreator:......n0body "   << endl;
-    cout << "\t\t\tVersion:......v0.01"     << endl;
-    cout << "\t\t\tDate:.........09/12/2018"<< endl;
+    cout << "\n\t\tABOUT\n\n"  << endl;
+    cout << "\tCreator:......"<<creator<< endl;
+    cout << "\tVersion:......"<<version<< endl;
+    cout << "\tDate:........."<<date<< endl;
 }
-
-
 
 
 void gameRpgText(){
 
 }
+
+
+
+
+void JoQuemPo(const char* title, const char* text1, const char* text2){             //ok
+    while(true){
+        int opcao = 0;
+        do{
+            cls;
+            system("color 2");
+            cout << "\n\t"<<title<<"\t\tn0body\n\n" <<
+                    "\t1." << text1 <<  endl << // ok
+                    "\t2." << text2 << endl << // ok
+                    "\t0.EXIT\n\n "<< //
+                    "\tOPÇÃO: "; cin >> opcao;
+            if (opcao == 0)
+            return;
+
+            if(opcao < 0 || opcao > 2)
+            cout << "\tComando Inválidos" ;
+
+        }while(opcao < -0 && opcao > 3);
+        switch(opcao){ //opcao mainMain
+        case 1:
+            gameRpgText();
+            break;
+        case 2:
+            about("n0dody","0.01","15/05/2019");
+            break;
+        }
+        pausa;
+    }
+}
+
+
+
+void gameJoQuemPo(){
+
+}
+
+
+
+
+
+
