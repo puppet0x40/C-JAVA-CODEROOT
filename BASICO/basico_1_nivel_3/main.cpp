@@ -12,12 +12,13 @@ using namespace std;
 void fibonacci();
 void Rpgtext(const char* title, const char* text1, const char* text2);
 void gameRpgText();
+string story(int random );
 void JoQuemPo(const char* title, const char* text1, const char* text2);
 void gameJoQuemPo();
 string toString(int opcao);
 int resultado(int suaOpcao, int oponenteOpcao);
 void about(const char* creator,const char* version,const char* date);
-void Menu(string text[],int opcao_size);
+//void Menu(string text[],int opcao_size);
 
 /*************************** main *************************************/
 int main()
@@ -236,9 +237,9 @@ void gameRpgText(){
             cls;
             cout << "HP:" << hpSeu << "/99\n"<<
                     "MP:" << mpSeu << "/50\n\n";
-            /**
-            Story
-            **/
+
+            srand(time(NULL));
+            cout << story(rand()%3) << "\n\n";
 
             cout << "(1) ataca \n" <<
                     "(2) defende \n" <<
@@ -261,6 +262,23 @@ void gameRpgText(){
     }
 }
 
+
+
+string story(int random ){
+string storyScene[]=
+{
+ "story1",
+ "story2",
+ "story3",
+ "story4",
+ "story5",
+ "story6"
+};
+
+return  storyScene[random];
+
+
+}
 
 /*
 void Menu(string text[],int opcao_size){             //ok
