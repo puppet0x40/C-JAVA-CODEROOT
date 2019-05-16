@@ -30,7 +30,7 @@ int main()
     int opcao = 0;
     do{
         cls;
-        cout << "\n\tMenu de jogo e desafio\n" <<
+        cout << "\n\tMenu de jogos e desafios\n" <<
                 "\t1.FIBONACCI\n" <<
                 "\t2.JO-QUEM-PO\n" <<
                 "\t3.RPGTEXT\n" <<
