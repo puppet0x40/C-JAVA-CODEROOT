@@ -19,9 +19,6 @@ int resultado(int suaOpcao, int oponenteOpcao);
 void about(const char* creator,const char* version,const char* date);
 void Menu(string text[],int opcao_size);
 
-
-void Menu(string text[],int opcao_size);
-
 /*************************** main *************************************/
 int main()
 {
@@ -60,10 +57,6 @@ int main()
             break;
         case 4:
             //Menu(listText,4);
-            pausa;
-            break;
-        case 4:
-            Menu(listText,4);
             pausa;
             break;
         }
@@ -119,10 +112,6 @@ void Rpgtext(const char* title, const char* text1, const char* text2){          
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ca5c307edc6c131bedbcc7a6727fa8d7bf083981
 void JoQuemPo(const char* title, const char* text1, const char* text2){             //ok
     while(true){
         int opcao = 0;
@@ -160,48 +149,6 @@ void about(const char* creator,const char* version,const char* date){
     cout << "\tVersion:......"<<version<< endl;
     cout << "\tDate:........."<<date<< endl;
 }
-
-void Menu(string text[],int opcao_size){             //ok
-    int opcao = 0;
-    do{
-        cls;
-        system("color 2");
-        cout << "\n\t" << text[0] <<"\t\tn0body\n\n";
-        for(int i = 1 ; i < opcao_size; i++){
-            cout << "\t" << i << "." << text[i] << endl;
-        }
-        cout << "\t0.EXIT\n\n "<< //
-                "\tOPÇÃO: ";
-        cin >> opcao;
-        if (opcao == 0)
-        return;
-
-        if(opcao < 0 || opcao > opcao_size)
-        cout << "\tComando Inválidos" ;
-
-    }while(opcao < -0 && opcao > opcao_size);
-    switch(opcao){ //opcao mainMain
-    case 1:
-        gameRpgText();
-        break;
-    case 2:
-        about("n0dody","0.01","15/05/2019");
-        break;
-    }
-        pausa;
-}
-
-
-
-void about(const char* creator,const char* version,const char* date){
-    cls;
-    cout << "\n\t\tABOUT\n\n"  << endl;
-    cout << "\tCreator:......"<<creator<< endl;
-    cout << "\tVersion:......"<<version<< endl;
-    cout << "\tDate:........."<<date<< endl;
-}
-
-
 
 void gameJoQuemPo(){
     int seuPontos =0, oponentePontos = 0,suaOpcao,oponenteOpcao;
@@ -313,11 +260,6 @@ void gameRpgText(){
         pausa;
     }
 }
-
-void gameRpgText(){
-
-}
-
 
 
 /*
