@@ -88,8 +88,8 @@ void Rpgtext(const char* title, const char* text1, const char* text2){          
         do{
             cls;
             system("color 2");
-            cout << "\n\t"<<title<<"\t\tn0body\n\n" <<
-                    "\t1." << text1 <<  endl << // ok
+            cout << "\n\t" << title << "\n\n" <<
+                    "\t1." << text1 << endl << // ok
                     "\t2." << text2 << endl << // ok
                     "\t0.EXIT\n\n "<< //
                     "\tOPÇÃO: "; cin >> opcao;
@@ -105,7 +105,7 @@ void Rpgtext(const char* title, const char* text1, const char* text2){          
             gameRpgText();
             break;
         case 2:
-            about("n0body","0.01","18/12/2018");
+            about("puppet0x40","0.01","18/12/2018");
             break;
         }
         pausa;
@@ -118,7 +118,7 @@ void JoQuemPo(const char* title, const char* text1, const char* text2){         
         do{
             cls;
             system("color 2");
-            cout << "\n\t"<<title<<"\t\tn0body\n\n" <<
+            cout << "\n\t" << title << "\n\n" <<
                     "\t1." << text1 <<  endl << // ok
                     "\t2." << text2 << endl << // ok
                     "\t0.EXIT\n\n "<< //
@@ -135,10 +135,10 @@ void JoQuemPo(const char* title, const char* text1, const char* text2){         
             gameJoQuemPo();
             break;
         case 2:
-            about("n0dody","0.01","15/05/2019");
+            about("puppet0x40","0.0d1","15/05/2019");
             break;
         }
-        getchar();
+        pausa;
     }
 }
 
