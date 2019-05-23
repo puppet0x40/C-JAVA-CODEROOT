@@ -1,7 +1,12 @@
 # C-JAVA-CODEROOT
-equipe de estudo de linguagem  c++, java e outros
+trello: equipe de estudo de linguagem  c++, java 
 
-equipe 
+equipe:
 nobody
 puppet0x40
+
+
+
+
+
 
