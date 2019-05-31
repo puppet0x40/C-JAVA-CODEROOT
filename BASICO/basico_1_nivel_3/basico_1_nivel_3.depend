@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1558025261 source:c:\users\windino\documents\github\c-java-coderoot\basico\basico_1_nivel_3\main.cpp
+1558724500 source:c:\users\windino\documents\github\c-java-coderoot\basico\basico_1_nivel_3\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
 	<cmath>
 	<ctime>
+	<string>
 	<clocale>
 
 1558049057 source:e:\projeto\github\c-java-coderoot\basico\basico_1_nivel_3\main.cpp
