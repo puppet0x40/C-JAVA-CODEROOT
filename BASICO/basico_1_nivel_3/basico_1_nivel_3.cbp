@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="FIBONACCI.cpp" />
+		<Unit filename="JO_QUEM_PO.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="rpgtext.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
