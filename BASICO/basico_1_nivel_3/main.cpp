@@ -3,34 +3,43 @@
 #include <cstdio>
 #include <cmath>
 #include <ctime>
+#include <string>
 #include <clocale>
 #define cls system("cls");
 #define pausa getchar();getchar()  // ele sempre pega o enter e depois espera!
 using namespace std;
+/*********************** enum ************************/
+enum acao{PEDRA=1,PAPEL,TESOURA,ATACA,FUGIR};
+string meuOvo;
+
 
 /*********************** Protótipos das funções************************/
 void fibonacci();
-void Rpgtext(const char* title, const char* text1, const char* text2);
-void gameRpgText();
-string story(int random );
+
 void JoQuemPo(const char* title, const char* text1, const char* text2);
 void gameJoQuemPo();
 string toString(int opcao);
 int resultado(int suaOpcao, int oponenteOpcao);
+
+void Rpgtext(const char* title, const char* text1, const char* text2);
+void gameRpgText();
+string story(int random );
+void setMeuOvo();
+
 void about(const char* creator,const char* version,const char* date);
 //void Menu(string text[],int opcao_size);
 
 /*************************** main *************************************/
 int main()
 {
-    string listText[] = {"test","test1","test2","test3"};
+   // string listText[] = {"test","test1","test2","test3"};
     setlocale(LC_ALL,"portuguese");
     system("color 4");
     system("mode con:cols=41 lines=15");
     int opcao = 0;
     do{
         cls;
-        cout << "\n\tMenu de jogos e desafios\n" <<
+        cout << "\n\tMENU DE JOGOS E DESAFIOS\n" <<
                 "\t1.FIBONACCI\n" <<
                 "\t2.JO-QUEM-PO\n" <<
                 "\t3.RPGTEXT\n" <<
@@ -40,8 +49,8 @@ int main()
         if (opcao == 0)
             exit(1);
 
-        if(opcao < 0 || opcao > 4){
-            cout << "\t\t\t\tComando Inválidos" ;
+        if(opcao < 0 || opcao > 3){
+            cout << "\t\tComando Inválidos" ;
             pausa;
         }
         cls;
@@ -54,11 +63,7 @@ int main()
             JoQuemPo("Jo-Quem-Po","JOGAR","SOBRE");
             break;
         case 3:
-            Rpgtext("RPGTEXT","NEW GAME","ABOUT");
-            break;
-        case 4:
-            //Menu(listText,4);
-            pausa;
+            Rpgtext("MEMES OF WAR","NEW GAME","ABOUT");
             break;
         }
 
@@ -66,6 +71,19 @@ int main()
     return 0;
 }
 /***************************Funcões************************************/
+
+
+
+void about(const char* creator,const char* version,const char* date){
+    cls;
+    cout << "\n\t\tABOUT\n\n"  << endl;
+    cout << "\tCreator:......" << creator << endl;
+    cout << "\tVersion:......" << version << endl;
+    cout << "\tDate:........." << date << endl;
+}
+
+
+/// fibonacci
 void fibonacci(){               //ok
     int a, b, c, sequencia= 20;
     cls;
@@ -83,35 +101,7 @@ void fibonacci(){               //ok
     cout <<"\n<fim>";
 }
 
-void Rpgtext(const char* title, const char* text1, const char* text2){             //ok
-    while(true){
-        int opcao = 0;
-        do{
-            cls;
-            system("color 2");
-            cout << "\n\t" << title << "\n\n" <<
-                    "\t1." << text1 << endl << // ok
-                    "\t2." << text2 << endl << // ok
-                    "\t0.EXIT\n\n "<< //
-                    "\tOPÇÃO: "; cin >> opcao;
-            if (opcao == 0)
-            return;
 
-            if(opcao < 0 || opcao > 2)
-            cout << "\tComando Inválidos" ;
-
-        }while(opcao < -0 && opcao > 3);
-        switch(opcao){ //opcao mainMain
-        case 1:
-            gameRpgText();
-            break;
-        case 2:
-            about("puppet0x40","0.01","18/12/2018");
-            break;
-        }
-        pausa;
-    }
-}
 
 void JoQuemPo(const char* title, const char* text1, const char* text2){             //ok
     while(true){
@@ -123,12 +113,12 @@ void JoQuemPo(const char* title, const char* text1, const char* text2){         
                     "\t1." << text1 <<  endl << // ok
                     "\t2." << text2 << endl << // ok
                     "\t0.EXIT\n\n "<< //
-                    "\tOPÇÃO: "; cin >> opcao;
+                    "\tOpção: "; cin >> opcao;
             if (opcao == 0)
             return;
 
             if(opcao < 0 || opcao > 2)
-            cout << "\tComando Inválidos" ;
+            cout << "\t\tOpção Inválidos" ;
 
         }while(opcao < -0 && opcao > 3);
         switch(opcao){ //opcao mainMain
@@ -143,13 +133,6 @@ void JoQuemPo(const char* title, const char* text1, const char* text2){         
     }
 }
 
-void about(const char* creator,const char* version,const char* date){
-    cls;
-    cout << "\n\t\tABOUT\n\n"  << endl;
-    cout << "\tCreator:......"<<creator<< endl;
-    cout << "\tVersion:......"<<version<< endl;
-    cout << "\tDate:........."<<date<< endl;
-}
 
 void gameJoQuemPo(){
     int seuPontos =0, oponentePontos = 0,suaOpcao,oponenteOpcao;
@@ -158,17 +141,17 @@ void gameJoQuemPo(){
         do{
             cls;
             cout << "Ganhou:" << seuPontos << "\t\t\tPerdeu:"<< oponentePontos << "\n\n"<<
-                    "(1) pedra\n" <<
-                    "(2) papel\n" <<
-                    "(3) tesoura\n" <<
-                    "(0) cancelar jogada\n\n" <<
-                    "OPÇÃO: ";
+                    "(1) Pedra\n" <<
+                    "(2) Papel\n" <<
+                    "(3) Tesoura\n" <<
+                    "(0) Cancelar Jogada\n\n" <<
+                    "Opção: ";
             cin >> suaOpcao;
             if (suaOpcao == 0)
                 return;
 
             if(suaOpcao < 0 || suaOpcao > 3)
-                cout << "\tComando Inválidos";
+                cout << "\tOpção Inválidos";
 
         }while(suaOpcao < 0 && suaOpcao > 3);
         srand(time(NULL));
@@ -191,23 +174,6 @@ void gameJoQuemPo(){
     }
 }
 
-string toString(int opcao){
-switch(opcao){
-        case 1:
-            return "pedra";
-        case 2:
-            return "papel";
-        case 3:
-            return "tesoura";
-        case 100:
-            return "atacou";
-        case 200:
-            return "defendeu";
-        case 300:
-            return "fugiu";
-        }
-}
-
 int resultado(int suaOpcao, int oponenteOpcao){
     enum JoQuemPo{pedra = 1, papel, tesoura};
     if(suaOpcao != oponenteOpcao){
@@ -225,12 +191,50 @@ int resultado(int suaOpcao, int oponenteOpcao){
     }
 }
 
+string toString(int opcao){
+    switch(opcao){
+    case PEDRA: return "Pedra";
+    case PAPEL: return "Papel";
+    case TESOURA: return "Tesoura";
+    }
+}
+
+
+void Rpgtext(const char* title, const char* text1, const char* text2){             //ok
+    while(true){
+        int opcao = 0;
+        do{
+            cls;
+            system("color 2");
+            cout << "\n\t" << title << "\n\n" <<
+                    "\t1." << text1 << endl << // ok
+                    "\t2." << text2 << endl << // ok
+                    "\t0.EXIT\n\n "<< //
+                    "\tOPÇÃO: "; cin >> opcao;
+            if (opcao == 0)
+            return;
+
+            if(opcao < 0 || opcao > 2)
+            cout << "\tComando Inválidos" ;
+
+        }while(opcao < -0 && opcao > 3);
+        switch(opcao){ //opcao mainMain
+        case 1:
+            setMeuOvo();
+            gameRpgText();
+            break;
+        case 2:
+            about("puppet0x40","0.01","18/12/2018");
+            break;
+        }
+        pausa;
+    }
+}
+
+
 void gameRpgText(){
-    int hpSeu =99,
-        mpSeu = 50,
-        suaOpcao,
-        hpOpo,
-        mpOpo;
+    srand(time(NULL));
+    int hpSeu =99, mpSeu = 50, suaOpcao, hpOpo, mpOpo;
 
     while(true){
         do{
@@ -238,8 +242,8 @@ void gameRpgText(){
             cout << "HP:" << hpSeu << "/99\n"<<
                     "MP:" << mpSeu << "/50\n\n";
 
-            srand(time(NULL));
-            cout << story(rand()%3) << "\n\n";
+
+            cout << story(rand()%1) << "\n\n";
 
             cout << "(1) ataca \n" <<
                     "(2) defende \n" <<
@@ -262,23 +266,44 @@ void gameRpgText(){
     }
 }
 
-
-
-string story(int random ){
-string storyScene[]=
-{
- "story1",
- "story2",
- "story3",
- "story4",
- "story5",
- "story6"
-};
-
-return  storyScene[random];
-
-
+void setMeuOvo(){
+    cls;
+    cout << "\n\n\n\tNome do seu Ovo: ";
+    cin >> meuOvo;
 }
+
+
+string story(int index){
+    string storyScene[]={
+    "Era um a vez um ovo guerreiro, que buscava aventura escrota em sua vida que era um saco! "
+    "story1",
+    "story2",
+    "story3",
+    "story4",
+    "story5",
+    "story6"
+    };
+    return  storyScene[index];
+}
+
+
+
+string listaAtaca(){
+    string lista[]={
+    "eeeroooooww",
+    "chuta a canela",
+    "Dá uma rasteira e sai correndo"
+    };
+    switch( rand()%3 ){
+    case 0: return lista[0];
+    case 1: return lista[1];
+    case 2: return lista[2];
+    }
+}
+
+
+
+
 
 /*
 void Menu(string text[],int opcao_size){             //ok
